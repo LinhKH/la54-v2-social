@@ -22,14 +22,18 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <p class="text-center">Friends</p>
+            
+            @if (Auth::id() != $user->id)
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="text-center">Friends</p>
+                    </div>
+                    <div class="panel-body">
+                        <friend :profile_user_id="{{ $user->id }}"></friend>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <friend :profile_user_id="{{ $user->id }}"></friend>
-                </div>
-            </div>
+            @endif
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <p class="text-center">About me.</p>

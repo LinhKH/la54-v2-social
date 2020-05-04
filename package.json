@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "gul": "^1.0.0",
+    "laravel-echo": "^1.7.0",
     "noty": "^3.2.0-beta",
+    "pusher-js": "^6.0.2",
     "vue-resource": "^1.5.1"
   }
 }

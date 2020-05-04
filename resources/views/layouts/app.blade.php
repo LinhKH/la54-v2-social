@@ -74,6 +74,9 @@
         </nav>
 
         @yield('content')
+        @if (Auth::check())
+            <notification :id="{{ Auth::id() }}"></notification>
+        @endif
     </div>
 
     <!-- Scripts -->
