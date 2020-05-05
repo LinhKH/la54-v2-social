@@ -5,6 +5,7 @@ namespace App;
 use App\Traits\Friendable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Storage;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','slug','gender','avatar'
+        'name', 'email', 'password', 'slug', 'gender', 'avatar'
     ];
 
     /**
@@ -29,7 +30,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function profile() {
+    public function profile()
+    {
         return $this->hasOne('App\Profile');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany('App\Post')->orderBy('created_at');
+    }
+
+    public function getAvatarAttribute($avatar)
+    {
+        return asset(Storage::url($avatar));
     }
 }

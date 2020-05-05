@@ -15,6 +15,7 @@
 </head>
 <body>
     <div id="app">
+        <init></init>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -37,7 +38,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if (Auth::check())
-                        <li><a href="{{ route('profile', ['slug' => Auth::user()->slug]) }}">My Profile</a></li>
+                            <li><a href="{{ route('profile', ['slug' => Auth::user()->slug]) }}">My Profile</a></li>
+                            <unread></unread>
+                            
                         @endif
                     </ul>
 
@@ -50,6 +53,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <img src="{{ Auth::user()->avatar }}" alt="" width="40px" height="40px" class="avatar-feed">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -77,6 +81,11 @@
         @if (Auth::check())
             <notification :id="{{ Auth::id() }}"></notification>
         @endif
+        <audio id="noty_audio">
+            <source src="{{ asset('audio/notify.mp3') }}">
+            <source src="{{ asset('audio/notify.ogg') }}">
+            <source src="{{ asset('audio/notify.wav') }}">
+        </audio>
     </div>
 
     <!-- Scripts -->

@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewFriendRequest extends Notification
+class NewFriendRequest extends Notification implements ShouldQueue
 {
     use Queueable;
     public $user;
@@ -57,7 +57,7 @@ class NewFriendRequest extends Notification
     {
         return [
             'name' => $this->user->name,
-            'message' => $this->user->name . ' sent you a friend request.'
+            'message' => ' sent you a friend request.'
         ];
     }
 }

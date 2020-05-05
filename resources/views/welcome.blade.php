@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel 54 - Vue 2 Social Network
                 </div>
 
                 <div class="links">

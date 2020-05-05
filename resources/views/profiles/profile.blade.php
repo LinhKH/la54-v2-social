@@ -9,7 +9,7 @@
                 </div>
                 <div class="panel-body">
                     <center>
-                        <img src="{{ Storage::url($user->avatar) }}" width="70px" height="70px" style="border-radius:50%" alt="">
+                        <img src="{{ $user->avatar }}" width="70px" height="70px" style="border-radius:50%" alt="">
                     </center>
                     <br>
                     <p class="text-center">
