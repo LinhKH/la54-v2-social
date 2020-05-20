@@ -40,4 +40,20 @@ class FriendshipsController extends Controller
 
         return $resp;
     }
+    // <?php
+        // $currentDate = "2020-05-20";
+        // $d = new \DateTime($currentDate);
+        // $cond = 1;
+        // if($cond == 1) {
+            
+        //     $d->modify('first day of +1 month');
+        // } else if($cond == 0) {
+        //     $d->modify('first day of -1 month');
+        // } else {
+        //     $finalResule =  $d->format('Y-m-d');    
+        // }
+        // $finalResule =  $d->format('Y-m-d');
+
+
+        // var_dump ($finalResule);
 }
